@@ -1,0 +1,12 @@
+<div class="card p-4 mb-3 shadow-sm bg-white rounded">
+  <h1><%= @flat.name %></h1>
+  <h4><%= @flat.address %></h4>
+</div>
+<div class="card p-4 shadow-sm bg-white rounded">
+  <h3>A bit more about this flat...</h3>
+  <p><%= @flat.description %></p>
+</div>
+<div class="card p-4 shadow-sm bg-white rounded">
+  <p><i class="fas fa-euro-sign"></i> <%= @flat.number_of_guests %></p>
+  <p><i class="fas fa-user-friends"></i> <%= @flat.price_per_night %></p>
+</div>

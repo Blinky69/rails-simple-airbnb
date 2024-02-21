@@ -1,0 +1,31 @@
+<h1>All Flats</h1>
+<p>All <%= @flats.count %> flats.</p>
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <% @flats.each do|flat| %>
+    <div class="col">
+      <div class="card h-100 shadow-sm bg-white rounded">
+        <%= image_tag "https://source.unsplash.com/random?house", class: "card-img-top" %>
+        <div class="card-body">
+          <h5 class="card-title"><%= flat.name %></h5>
+          <p class="card-text"><%= flat.address %></p>
+
+          <ul class="list-inline">
+            <li class="list-inline-item"><i class="fas fa-user-friends"></i> <%= flat.number_of_guests %></li>
+            <li class="list-inline-item"><i class="fas fa-euro-sign"></i> <%= flat.price_per_night %></li>
+          </ul>
+
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">
+            <ul class="list-inline mb-1">
+              <li class="list-inline-item"><%= link_to "More Info", flat_path(flat), class: "link-primary" %></li>
+              <li class="list-inline-item"><%= link_to "Edit", edit_flat_path(flat), class: "link-warning" %></li>
+              <li class="list-inline-item"><%= link_to "Remove", flat_path(flat), method: :delete, class: "link-danger" %></li>
+            </ul>
+          </small>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
